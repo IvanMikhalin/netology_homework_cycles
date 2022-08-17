@@ -11,7 +11,7 @@ public class StatsServiceTest {
     public void shouldFindSummOfTheMonths() {
         StatsService service = new StatsService();
         int expectedSumm = 180;
-        int actualSumm = service.totalcost(arr);
+        int actualSumm = service.totalCost(arr);
         Assertions.assertEquals(expectedSumm, actualSumm);
     }
 
@@ -19,7 +19,7 @@ public class StatsServiceTest {
     public void shouldFindAverageCostPerMonth() {
         StatsService service = new StatsService();
         int expectedSumm = 15;
-        int actualSumm = service.AvgProfit(arr);
+        int actualSumm = service.avgProfit(arr);
         Assertions.assertEquals(expectedSumm, actualSumm);
     }
 
