@@ -1,5 +1,9 @@
 package ru.netology.stats;
+
 public class StatsService {
+
+    int month = 0;
+    int count = 0;
 
     //#1 Сумму всех продаж
     public int totalCost(int[] sales) {
@@ -11,16 +15,16 @@ public class StatsService {
     }
 
     //#2 Среднюю сумму продаж в месяц
-    public int avgProfit(int [] sales) {
+    public int avgProfit(int[] sales) {
         int avg = 0;
-        avg = totalCost (sales) / sales.length;
+        avg = totalCost(sales) / sales.length;
         return avg;
     }
 
     //#3 Номер месяца, в котором был пик продаж
     public int maxSales(int[] sales) {
         int maxMonth = 0;
-        int month = 0;
+        //     int month = 0;
         for (int sale : sales) {
             if (sale >= sales[maxMonth]) {
                 maxMonth = month;
@@ -33,7 +37,7 @@ public class StatsService {
     //#4 Номер месяца, в котором был минимум продаж
     public int minSales(int[] sales) {
         int minMonth = 0;
-        int month = 0;
+
         for (int sale : sales) {
             if (sale <= sales[minMonth]) {
                 minMonth = month;
@@ -45,8 +49,6 @@ public class StatsService {
 
     //#5 Кол-во месяцев, в которых продажи были ниже среднего
     public int LessthenAvgProfit(int sales[]) {
-
-        int count = 0; // количество итераций
         for (int j = 0; j < sales.length; j++) {
             if (avgProfit(sales) > sales[j]) {
                 count++;
@@ -57,8 +59,6 @@ public class StatsService {
 
     //#6 Кол-во месяцев, в которых продажи были выше среднего
     public int MorethenAvgProfit(int sales[]) {
-
-        int count = 0; // количество итераций
         for (int j = 0; j < sales.length; j++) {
             if (avgProfit(sales) < sales[j]) {
                 count++;
